@@ -3,99 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTMX Education Platform</title>
-    <!-- HTMX -->
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    <!-- Tailwind CSS -->
+    <title>Laundry - IGCSE English Tutoring</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
         }
+        .divider {
+            height: 1px;
+            background-color: #e5e7eb;
+            margin: 1.5rem 0;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: #000;
+        }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-sm py-4">
-        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-8">
-                <a href="#" class="text-2xl font-bold text-indigo-600">EduHTMX</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Courses</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Resources</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">About</a>
+<body class="bg-white max-w-4xl mx-auto px-6 py-8">
+    <!-- Navigation -->
+    <header class="flex justify-between items-center mb-12">
+        <h1 class="text-3xl font-bold">Laundry</h1>
+        <nav class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="font-medium">Tutoring</a>
+            <a href="#" class="font-medium">Students</a>
+            <a href="#" class="font-medium">Teachers</a>
+            <a href="#" class="font-medium">Blog</a>
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-md py-1 px-3 text-sm">
+                <svg class="w-4 h-4 absolute right-3 top-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </nav>
+        <button class="md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden mb-8">
+        <a href="#" class="block py-2">Tutoring</a>
+        <a href="#" class="block py-2">Students</a>
+        <a href="#" class="block py-2">Teachers</a>
+        <a href="#" class="block py-2">Blog</a>
+        <div class="relative mt-2">
+            <input type="text" placeholder="Search..." class="w-full border border-gray-300 rounded-md py-1 px-3 text-sm">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="divider"></div>
+        
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Join my<br>group class</h2>
+            <p class="text-lg mb-4">For IGCSE First Language English 0500/0990</p>
+            <p class="text-lg font-bold mb-6">Starting September 2025</p>
+            <p class="mb-6">I am currently accepting expressions of interest for new group classes.<br>
+            Perfect for students preparing for March 2026 or Summer 2026 exams.</p>
+            
+            <div class="divider"></div>
+            
+            <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition-colors">
+                REGISTER YOUR INTEREST
+            </button>
+        </section>
+
+        <!-- Study With Me Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8">Study with me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- ONE TO ONE -->
+                <div class="service-card p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">ONE TO ONE</h3>
+                    <p class="text-gray-700 mb-4">Get intensive one-to-one tutoring with a qualified English teacher and examiner.</p>
+                    <p class="font-bold">From £100/hour</p>
+                </div>
+                
+                <!-- GROUP CLASS -->
+                <div class="service-card p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">GROUP CLASS</h3>
+                    <p class="text-gray-700 mb-4">Study live with me in weekly sessions designed to support students sitting IGCSE First Language English 0500/0990.</p>
+                    <p class="font-bold">From £40/hour</p>
+                </div>
+                
+                <!-- MASTERCLASS -->
+                <div class="service-card p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">MASTERCLASS</h3>
+                    <p class="text-gray-700 mb-4">Join me for a two-month intensive Masterclass for First Language English IGCSE, with two live weekly classes and marked exam practices.</p>
+                    <p class="font-bold">From £20/hour</p>
+                </div>
+                
+                <!-- ONLINE COURSES -->
+                <div class="service-card p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">ONLINE COURSES</h3>
+                    <p class="text-gray-700 mb-4">Study at your own pace with video lessons, worksheets and quizzes created by an expert English teacher for IGCSE and IB English.</p>
+                    <p class="font-bold">From £0/hour</p>
                 </div>
             </div>
-            <div>
-                <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">
-                    Sign In
-                </button>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Master Modern Web Development</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Learn HTMX, Tailwind CSS, and server-side rendering with our interactive courses.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-white text-indigo-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">
-                    Browse Courses
-                </button>
-                <button class="bg-transparent border-2 border-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-indigo-600 transition">
-                    Learn More
-                </button>
+        <!-- About Your Teacher Section -->
+        <section class="mb-16">
+            <div class="divider"></div>
+            
+            <h2 class="text-2xl font-bold mb-2">10 years of experience</h2>
+            <h3 class="text-xl font-semibold mb-6">About your teacher</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="mb-4">My name is Sarah and I've been teaching for ten years, working in the UK and China.</p>
+                    <p class="mb-4">Working as a teacher, tutor and examiner has given me a unique insight into finding ways to help students achieve their goals, whether that's for IGCSE or IB English.</p>
+                    <p class="mb-6">I'm passionate about making educational resources that can help both students and teachers in the classroom.</p>
+                    
+                    <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition-colors">
+                        LEARN MORE ABOUT ME
+                    </button>
+                </div>
+                
+                <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+                    <!-- Placeholder for teacher image -->
+                    <span class="text-gray-400">Teacher Photo</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Course Grid (Loaded via HTMX) -->
-    <section class="py-16 max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-gray-800">Popular Courses</h2>
-        <div 
-            id="course-grid" 
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            hx-get="/api/courses" 
-            hx-trigger="load"
-        >
-            <!-- Courses will be loaded here dynamically -->
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-xl font-bold mb-4">EduHTMX</h3>
-                <p class="text-gray-400">
-                    Teaching modern web development the simple way.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Legal</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-4">Contact</h4>
-                <p class="text-gray-400">hello@eduhtmx.com</p>
-            </div>
-        </div>
-    </footer>
+    <!-- HTMX Script for Mobile Menu Toggle -->
+    <script>
+        document.querySelector('button.md:hidden').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
