@@ -3,148 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry - IGCSE English Tutoring</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <title>taughtly - IGCSE English Tutoring</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            line-height: 1.6;
         }
+        
         .divider {
-            height: 1px;
-            background-color: #e5e7eb;
-            margin: 1.5rem 0;
+            border-top: 1px solid #e5e5e5;
+            margin: 30px 0;
         }
-        .service-card {
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
+        
+        .nav-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-bottom-color: #000;
+        
+        .cta-button {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .cta-button:hover {
+            background-color: #333;
+        }
+        
+        .search-input {
+            border: 1px solid #e5e5e5;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #999;
         }
     </style>
 </head>
-<body class="bg-white max-w-4xl mx-auto px-6 py-8">
+<body>
     <!-- Navigation -->
-    <header class="flex justify-between items-center mb-12">
-        <h1 class="text-3xl font-bold">Laundry</h1>
-        <nav class="hidden md:flex space-x-6 items-center">
-            <a href="#" class="font-medium">Tutoring</a>
-            <a href="#" class="font-medium">Students</a>
-            <a href="#" class="font-medium">Teachers</a>
-            <a href="#" class="font-medium">Blog</a>
-            <div class="relative">
-                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-md py-1 px-3 text-sm">
-                <svg class="w-4 h-4 absolute right-3 top-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;">
+        <h1 style="font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">taughtly</h1>
+        <nav style="display: flex; gap: 30px; align-items: center;">
+            <a href="#" class="nav-link">Tutoring</a>
+            <a href="#" class="nav-link">Students</a>
+            <a href="#" class="nav-link">Teachers</a>
+            <a href="#" class="nav-link">Blog</a>
+            <div style="position: relative;">
+                <input type="text" placeholder="Search..." class="search-input" style="padding-left: 30px; height: 36px;">
+                <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </div>
         </nav>
-        <button class="md:hidden">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
     </header>
 
-    <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden mb-8">
-        <a href="#" class="block py-2">Tutoring</a>
-        <a href="#" class="block py-2">Students</a>
-        <a href="#" class="block py-2">Teachers</a>
-        <a href="#" class="block py-2">Blog</a>
-        <div class="relative mt-2">
-            <input type="text" placeholder="Search..." class="w-full border border-gray-300 rounded-md py-1 px-3 text-sm">
-        </div>
-    </div>
+    <!-- Divider -->
+    <div class="divider"></div>
 
     <!-- Main Content -->
     <main>
-        <div class="divider"></div>
-        
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Join my<br>group class</h2>
-            <p class="text-lg mb-4">For IGCSE First Language English 0500/0990</p>
-            <p class="text-lg font-bold mb-6">Starting September 2025</p>
-            <p class="mb-6">I am currently accepting expressions of interest for new group classes.<br>
-            Perfect for students preparing for March 2026 or Summer 2026 exams.</p>
+        <section style="margin-bottom: 60px;">
+            <h2 style="font-size: 32px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">
+                Join my<br>group class
+            </h2>
+            <p style="font-size: 18px; margin-bottom: 10px;">
+                For IGCSE First Language English 0500/0990
+            </p>
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 25px;">
+                Starting September 2025
+            </p>
+            <p style="margin-bottom: 30px; max-width: 600px;">
+                I am currently accepting expressions of interest for new group classes. Perfect for students preparing for March 2026 or Summer 2026 exams.
+            </p>
             
             <div class="divider"></div>
             
-            <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition-colors">
+            <button class="cta-button">
                 REGISTER YOUR INTEREST
             </button>
         </section>
-
-        <!-- Study With Me Section -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-8">Study with me</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- ONE TO ONE -->
-                <div class="service-card p-6 border border-gray-200 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3">ONE TO ONE</h3>
-                    <p class="text-gray-700 mb-4">Get intensive one-to-one tutoring with a qualified English teacher and examiner.</p>
-                    <p class="font-bold">From £100/hour</p>
-                </div>
-                
-                <!-- GROUP CLASS -->
-                <div class="service-card p-6 border border-gray-200 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3">GROUP CLASS</h3>
-                    <p class="text-gray-700 mb-4">Study live with me in weekly sessions designed to support students sitting IGCSE First Language English 0500/0990.</p>
-                    <p class="font-bold">From £40/hour</p>
-                </div>
-                
-                <!-- MASTERCLASS -->
-                <div class="service-card p-6 border border-gray-200 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3">MASTERCLASS</h3>
-                    <p class="text-gray-700 mb-4">Join me for a two-month intensive Masterclass for First Language English IGCSE, with two live weekly classes and marked exam practices.</p>
-                    <p class="font-bold">From £20/hour</p>
-                </div>
-                
-                <!-- ONLINE COURSES -->
-                <div class="service-card p-6 border border-gray-200 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3">ONLINE COURSES</h3>
-                    <p class="text-gray-700 mb-4">Study at your own pace with video lessons, worksheets and quizzes created by an expert English teacher for IGCSE and IB English.</p>
-                    <p class="font-bold">From £0/hour</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Your Teacher Section -->
-        <section class="mb-16">
-            <div class="divider"></div>
-            
-            <h2 class="text-2xl font-bold mb-2">10 years of experience</h2>
-            <h3 class="text-xl font-semibold mb-6">About your teacher</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <p class="mb-4">My name is Sarah and I've been teaching for ten years, working in the UK and China.</p>
-                    <p class="mb-4">Working as a teacher, tutor and examiner has given me a unique insight into finding ways to help students achieve their goals, whether that's for IGCSE or IB English.</p>
-                    <p class="mb-6">I'm passionate about making educational resources that can help both students and teachers in the classroom.</p>
-                    
-                    <button class="bg-black text-white font-bold py-3 px-6 rounded hover:bg-gray-800 transition-colors">
-                        LEARN MORE ABOUT ME
-                    </button>
-                </div>
-                
-                <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
-                    <!-- Placeholder for teacher image -->
-                    <span class="text-gray-400">Teacher Photo</span>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <!-- HTMX Script for Mobile Menu Toggle -->
-    <script>
-        document.querySelector('button.md:hidden').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
