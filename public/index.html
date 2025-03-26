@@ -3,100 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>taughtly - IGCSE English Tutoring</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-            line-height: 1.6;
-        }
-        
-        .divider {
-            border-top: 1px solid #e5e5e5;
-            margin: 30px 0;
-        }
-        
-        .nav-link {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .cta-button {
-            background-color: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .cta-button:hover {
-            background-color: #333;
-        }
-        
-        .search-input {
-            border: 1px solid #e5e5e5;
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: #999;
-        }
-    </style>
+    <title>Taughtly - Group Class Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px;">
-        <h1 style="font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">taughtly</h1>
-        <nav style="display: flex; gap: 30px; align-items: center;">
-            <a href="#" class="nav-link">Tutoring</a>
-            <a href="#" class="nav-link">Students</a>
-            <a href="#" class="nav-link">Teachers</a>
-            <a href="#" class="nav-link">Blog</a>
-            <div style="position: relative;">
-                <input type="text" placeholder="Search..." class="search-input" style="padding-left: 30px; height: 36px;">
-                <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">taughtly</div>
+        <nav>
+            <ul>
+                <li><a href="#">Tutoring</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Teachers</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </nav>
+        <div class="header-right">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <div class="cart">🛒 0</div>
+            <button class="login-btn">Login</button>
+        </div>
     </header>
 
-    <!-- Divider -->
-    <div class="divider"></div>
-
-    <!-- Main Content -->
+    <!-- Main Section -->
     <main>
-        <section style="margin-bottom: 60px;">
-            <h2 style="font-size: 32px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">
-                Join my<br>group class
-            </h2>
-            <p style="font-size: 18px; margin-bottom: 10px;">
-                For IGCSE First Language English 0500/0990
-            </p>
-            <p style="font-size: 18px; font-weight: 600; margin-bottom: 25px;">
-                Starting September 2025
-            </p>
-            <p style="margin-bottom: 30px; max-width: 600px;">
-                I am currently accepting expressions of interest for new group classes. Perfect for students preparing for March 2026 or Summer 2026 exams.
-            </p>
-            
-            <div class="divider"></div>
-            
-            <button class="cta-button">
+        <div class="content">
+            <h1>Join my <span class="highlight">group class</span></h1>
+            <h2>For IGCSE First Language English 0500/0990<br>Starting September 2025</h2>
+            <p>I am currently accepting expressions of interest for new group classes.<br>Perfect for students preparing for March 2026 or Summer 2026 exams.</p>
+            <!-- HTMX Button for Form Submission -->
+            <button class="register-btn" 
+                    hx-post="/register-interest" 
+                    hx-target="#response-message" 
+                    hx-swap="innerHTML">
                 REGISTER YOUR INTEREST
             </button>
-        </section>
+            <div id="response-message"></div>
+        </div>
+        <div class="image-section">
+            <!-- Placeholder for the teacher image -->
+            <img src="teacher-image.jpg" alt="Teacher with whiteboard" class="teacher-image">
+            <div class="experience-badge">10+ years of experience</div>
+            <!-- Placeholder for decorative elements -->
+            <div class="decorative-shape"></div>
+        </div>
     </main>
 </body>
 </html>
